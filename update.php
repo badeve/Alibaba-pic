@@ -16,7 +16,7 @@ if (is_uploaded_file($file['tmp_name'])){
 	}
 	$new_filename = time().rand(100,1000).'.'.$ext_suffix;
 	if (move_uploaded_file($file['tmp_name'], $new_filename)){
-		$data = upload('https://cdn.jsdelivr.net/gh/SevenKiss/imgPicGo',$new_filename);
+		$data = upload('https://kfupload.alibaba.com/mupload',$new_filename);
 		$pattern = '/"url":"(.*?)"/';
 		preg_match($pattern, $data, $match);
 		@unlink($new_filename);
